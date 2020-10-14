@@ -5,7 +5,7 @@ using namespace std;
 
 // Function to find all substrings of string X that are
 // permutations of string Y
-void findAllAnagrams(string X, string Y)
+void findAllsubstring(string X, string Y)
 {
 	// m and n stores size of string Y and X respectively
 	int m, n;
@@ -17,9 +17,10 @@ void findAllAnagrams(string X, string Y)
 	for (int i = 0; i <= n - m; i++)
 	{
 		// if a substring X[i .. i+m] is a permutation of Y
+		
 		if (is_permutation(X.begin() + i, X.begin() + i + m, Y.begin()))
 		{
-			cout << "Anagram " << X.substr(i, m) <<
+			cout << "substring " << X.substr(i, m) <<
 					" present at index " << i << '\n';
 		}
 	}
@@ -31,7 +32,7 @@ int main()
 	string X = "XYYZXZYZXXYZ";
 	string Y = "XYZ";
 
-	findAllAnagrams(X, Y);
+	findAllsubstring(X, Y);
 
 	return 0;
 }
